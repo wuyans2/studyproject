@@ -8,13 +8,26 @@ export default new Router({
     {
       //首页组件
       path: '/',
-      redirect: '/computed',
+      redirect: '/state',
       component: () => import('@/pages/index.vue'),
       // meta: {title: '首页'},
       children: [{
-        path: '/computed',
-        component: () => import('@/pages/vuextest/computed'),
-      }]
+        path: '/state',
+        component: () => import('@/pages/vuextest/state'),
+      },
+      {
+        path: '/getter',
+        component: () => import('@/pages/vuextest/getter'),
+      },
+      {
+        path: '/mutation',
+        component: () => import('@/pages/vuextest/Mutation'),
+      },
+      {
+        path: '/action',
+        component: () => import('@/pages/vuextest/Action'),
+      }
+    ]
     },
   ]
 })
